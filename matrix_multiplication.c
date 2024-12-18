@@ -34,6 +34,11 @@ int main(int argc, char *argv[])
         fclose(fb);
         return 1;
     }
-    
+
+    // Allocate memory for matrices
+    int *a = (int *)malloc(a_rows * a_cols * sizeof(int));
+    int *b = (int *)malloc(b_rows * b_cols * sizeof(int));
+    int *c = (int *)calloc(a_rows * b_cols, sizeof(int));
+
     return 0;
 }
