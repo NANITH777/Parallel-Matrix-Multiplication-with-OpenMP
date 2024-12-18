@@ -21,5 +21,11 @@ int main(int argc, char *argv[])
         return 1;
     }
 
+    // Read matrix dimensions
+    int a_rows, a_cols, b_rows, b_cols;
+    fscanf(fa, "%d %d", &a_rows, &a_cols);
+    fscanf(fb, "%d %d", &b_rows, &b_cols);
+
+
     return 0;
 }
