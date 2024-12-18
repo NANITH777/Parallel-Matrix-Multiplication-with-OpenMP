@@ -27,5 +27,13 @@ int main(int argc, char *argv[])
     fscanf(fb, "%d %d", &b_rows, &b_cols);
 
 
+    // Validate dimensions for matrix multiplication
+    if (a_cols != b_rows) {
+        printf("Error: Incompatible matrix dimensions for multiplication.\n");
+        fclose(fa);
+        fclose(fb);
+        return 1;
+    }
+    
     return 0;
 }
