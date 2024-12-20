@@ -40,5 +40,16 @@ int main(int argc, char *argv[])
     int *b = (int *)malloc(b_rows * b_cols * sizeof(int));
     int *c = (int *)calloc(a_rows * b_cols, sizeof(int));
 
+     // Read matrix elements
+    for (int i = 0; i < a_rows * a_cols; i++) {
+        fscanf(fa, "%d", &a[i]);
+    }
+    for (int i = 0; i < b_rows * b_cols; i++) {
+        fscanf(fb, "%d", &b[i]);
+    }
+
+    fclose(fa);
+    fclose(fb);
+
     return 0;
 }
