@@ -59,5 +59,15 @@ int main(int argc, char *argv[])
         }
         printf("\n");
     }
+
+     printf("\n");
+
+    printf("Matrice B (%d x %d):\n", b_rows, b_cols);
+    for (int i = 0; i < b_rows; i++) {
+        for (int j = 0; j < b_cols; j++) {
+            printf("%d ", b[i * b_cols + j]);
+        }
+        printf("\n");
+    }
     return 0;
 }
