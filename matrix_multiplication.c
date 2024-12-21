@@ -51,5 +51,13 @@ int main(int argc, char *argv[])
     fclose(fa);
     fclose(fb);
 
+    // Display matrices A and B
+    printf("Matrice A (%d x %d):\n", a_rows, a_cols);
+    for (int i = 0; i < a_rows; i++) {
+        for (int j = 0; j < a_cols; j++) {
+            printf("%d ", a[i * a_cols + j]);
+        }
+        printf("\n");
+    }
     return 0;
 }
