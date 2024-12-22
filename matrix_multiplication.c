@@ -69,5 +69,19 @@ int main(int argc, char *argv[])
         }
         printf("\n");
     }
+
+    printf("\n");
+
+    // Parallel matrix multiplication
+    double start_time = omp_get_wtime();
+    #pragma omp parallel for collapse(2)
+    for (int i = 0; i < a_rows; i++) {
+        for (int j = 0; j < b_cols; j++) {
+            for (int k = 0; k < a_cols; k++) {
+                c[i * b_cols + j] += a[i * a_cols + k] * b[k * b_cols + j];
+            }
+        }
+    }
+    
     return 0;
 }
