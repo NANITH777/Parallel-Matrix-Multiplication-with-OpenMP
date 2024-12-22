@@ -82,6 +82,21 @@ int main(int argc, char *argv[])
             }
         }
     }
-    
+
+     double parallel_time = omp_get_wtime() - start_time;
+
+    // Serial matrix multiplication
+    start_time = omp_get_wtime();
+    int *c_serial = (int *)calloc(a_rows * b_cols, sizeof(int));
+    for (int i = 0; i < a_rows; i++) {
+        for (int j = 0; j < b_cols; j++) {
+            for (int k = 0; k < a_cols; k++) {
+                c_serial[i * b_cols + j] += a[i * a_cols + k] * b[k * b_cols + j];
+            }
+        }
+    }
+    double serial_time = omp_get_wtime() - start_time;
+
+
     return 0;
 }
