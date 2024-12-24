@@ -97,6 +97,19 @@ int main(int argc, char *argv[])
     }
     double serial_time = omp_get_wtime() - start_time;
 
+    // Display timing results
+    printf("Seri Zaman: %.6f saniye\n", serial_time);
+    printf("Paralel Zaman: %.6f saniye\n", parallel_time);
+
+    printf("\n");
+    // Display result matrix C
+     printf("Resulting Matrix C (%d x %d):\n", a_rows, b_cols);
+    for (int i = 0; i < a_rows; i++) {
+        for (int j = 0; j < b_cols; j++) {
+            printf("%d ", c[i * b_cols + j]);
+        }
+        printf("\n");
+    } 
 
     return 0;
 }
