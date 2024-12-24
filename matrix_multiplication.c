@@ -111,5 +111,16 @@ int main(int argc, char *argv[])
         printf("\n");
     } 
 
+     // Write result to file
+    FILE *fout = fopen(argv[3], "w");
+    if (fout == NULL) {
+        printf("Error opening output file.\n");
+        free(a);
+        free(b);
+        free(c);
+        free(c_serial);
+        return 1;
+    }
+
     return 0;
 }
