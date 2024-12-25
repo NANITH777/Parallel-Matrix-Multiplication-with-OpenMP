@@ -122,5 +122,15 @@ int main(int argc, char *argv[])
         return 1;
     }
 
+    fprintf(fout, "%d %d\n", a_rows, b_cols);
+    for (int i = 0; i < a_rows; i++) {
+        for (int j = 0; j < b_cols; j++) {
+            fprintf(fout, "%d ", c[i * b_cols + j]);
+        }
+        fprintf(fout, "\n");
+    }
+
+    fclose(fout);
+
     return 0;
 }
