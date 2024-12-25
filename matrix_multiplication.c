@@ -132,5 +132,11 @@ int main(int argc, char *argv[])
 
     fclose(fout);
 
+     // Free allocated memory
+    free(a);
+    free(b);
+    free(c);
+    free(c_serial);
+
     return 0;
 }
