@@ -1,6 +1,6 @@
-CC = gcc   #Derleyici olarak gcc'yi kullan
-CFLAGS = -fopenmp -Wall -O3 #  OpenMP desteğini etkinleştir, tüm uyarıları göster ve kodu maksimum performans için optimize et.
-LDFLAGS = -lpthread    # Çoklu iş parçacığı desteği sağlamak için pthread kütüphanesi ile bağlantı kur.
+CC = gcc   
+CFLAGS = -fopenmp -Wall -O3
+LDFLAGS = -lpthread   
 
 all: matrix_multiplication
 
